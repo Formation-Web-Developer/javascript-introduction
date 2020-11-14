@@ -5,7 +5,7 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Ajouter du code JavaScript dans sa page HTML - Cours JavaScript</title>
+        <title>Créer une variable et l'afficher - Cours JavaScript</title>
         <link rel="stylesheet" href="assets/css/all.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
@@ -48,7 +48,7 @@
                     type name = value;
                 </pre>
 
-                <p>Il existe <span class="badge">3</span> types différents de variable</p>
+                <p>Il existe <span class="badge">3</span> différents types de variable</p>
                 <p class="warn"><span class="badge">var</span>, <span class="badge">let</span> et le <span class="badge">const</span></p>
 
                 <p>Je ne rentrerais pas dans les détailles tout de suite mais sachez que chaque type correspond à une portabilité (Un mot compliqué pour l'instant). Contentons nous du <span class="badge">var</span>.</p>
@@ -64,6 +64,13 @@
                 </pre>
 
                 <p><span class="alert">PS:</span> Comme vous le remarquez, il y a un point virgule à la fin. Sachez qu'il n'est pas obligatoire en <span class="badge">JavaScript</span>. Cependant nous prendrons l'habitude de le mettre. Cela indique une fin d'instruction, de plus il est souvent obligatoire dans d'autre langage de programmation telque <span class="badge">PHP</span> que l'on verra plus tard dans la formation.</p>
+
+                <p>Les variables peuvent aussi être déclarés sur une seule et même ligne et seront séparés par des <span class="badge">virgules</span>.</p>
+
+                <pre class="code">
+                    var name = 'Doe', lastname = 'John', age = 37;
+                </pre>
+
             </section>
 
             <div class="separator"></div>
@@ -178,7 +185,7 @@
                     &nbsp;&nbsp;lastname: 'John',<br/>
                     &nbsp;&nbsp;age: 37,<br/>
                     &nbsp;&nbsp;country: 'France'<br/>
-                    }
+                    };
                 </pre>
 
                 <p>Pour appeler une variable dans un objet on utilisera le <span class="badge">point</span> comme séparateur.</p>
@@ -189,7 +196,7 @@
                     &nbsp;&nbsp;lastname: 'John',<br/>
                     &nbsp;&nbsp;age: 37,<br/>
                     &nbsp;&nbsp;country: 'France'<br/>
-                    }<br/>
+                    };<br/>
                     var userName = user.name;
                 </pre>
 
@@ -213,7 +220,7 @@
 
             <div class="buttons">
                 <a href="action-sur-les-balises-html.html">Les actions sur les balises HTML</a>
-                <a href="index.html">Revenir au sommaire</a>
+                <a href="la-concatenation-et-les-operations.html">La concaténation et les opérations</a>
             </div>
         </main>
 

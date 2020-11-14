@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Créer une variable et l'afficher - Cours JavaScript</title>
+        <link rel="stylesheet" href="assets/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <p onclick="onMenu()"><i class="fas fa-bars"></i></p>
+            <nav id="navbar" onclick="onMenu()">
+                <ul>
+                    <li><a href="index.html">Sommaire</a></li>
+                    <li><a href="#operations">Les opérations</a></li>
+
+                    <li><a href="#additions">Les additions</a></li>
+                    <li><a href="#soustractions">Les soustractions</a></li>
+                    <li><a href="#multiplications">Les multiplications</a></li>
+                    <li><a href="#divisions">Les divisions</a></li>
+                    <li><a href="#modulos">Les modulos</a></li>
+
+                    <li><a href="#concatenation">La concaténation</a></li>
+                    <li><a href="#ordreDePriorite">Les ordres de priorité</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h1>La concaténation et les opérations.</h1>
+
+            <div class="separator"></div>
+
+            <section id="operations">
+                <h2>Les opérations</h2>
+
+                <p>Il n'est pas tout de créer des variables mais il faut pouvoir s'en servir pour y faire des opérations logiques suivant nos besoins. Nous allons donc voir les différents type d'opération qui existe.</p>
+                <p>Les opérations ne se font qu'avec des <span class="badge">nombre</span>. (<span class="badge">Integer</span>, <span class="badge">Float</span>, <span class="badge">Double</span>)</p>
+
+                <h3 id="additions">1- Les additions</h3>
+
+                <p>Il est possible d'additionner deux ou plusieurs variables entre eux. Chaques variables seront séparés par l'opérateur <span class="badge">+</span>.</p>
+
+                <pre class="code">
+                    var x = 12;<br/>
+                    var y = 14;<br/>
+                    var result = x + y + 16;<br/>
+                    <br/>
+                    //Ou bien:<br/>
+                    var result = 12 + 14 + 16;
+                </pre>
+
+                <h3 id="soustractions">2- Les soustractions</h3>
+
+                <p>Il est possible de soustraire deux ou plusieurs variables entre eux. Chaques variables seront séparés par l'opérateur <span class="badge">-</span>.</p>
+
+                <pre class="code">
+                    var x = 27;<br/>
+                    var y = 34;<br/>
+                    var result = x - y; //Ce resultat donnera un nombre négatif (-7) mais cela restera un entier valide. <br/>
+                    <br/>
+                    //Ou bien:<br/>
+                    var result = 27 - 34;
+                </pre>
+
+                <h3 id="multiplications">3- Les multiplications</h3>
+
+                <p>Il est possible de multiplier deux ou plusieurs variables entre eux. Chaques variables seront séparés par l'opérateur <span class="badge">*</span>.</p>
+
+                <pre class="code">
+                    var x = 10;<br/>
+                    var y = 35;<br/>
+                    var result = x * y;<br/>
+                    <br/>
+                    //Ou bien:<br/>
+                    var result = 10 * 35;
+                </pre>
+
+                <h3 id="divisions">4- Les divisions</h3>
+
+                <p>Il est possible de diviser deux ou plusieurs variables entre eux. Chaques variables seront séparés par l'opérateur <span class="badge">/</span>.</p>
+
+                <pre class="code">
+                    var x = 16;<br/>
+                    var y = 4;<br/>
+                    var result = x - y;<br/>
+                    <br/>
+                    //Ou bien:<br/>
+                    var result = 16 / 4;
+                </pre>
+
+                <p><span class="alert">Attention:</span> Si vous faites une division par <span class="badge">0</span> il ne vous retournera pas un nombre valide mais une valeur de type <span class="badge">Infiniti</span>.</p>
+
+                <h3 id="modulos">5- Les modulos</h3>
+
+                <p>Il est possible de recupérer le reste d'une division. Chaques variables seront séparés par l'opérateur <span class="badge">%</span>.</p>
+
+                <pre class="code">
+                    var x = 30;<br/>
+                    var y = 15;<br/>
+                    var result = x % y; // Le résultat sera 0. Car 30/15=2 et donc il ne reste rien.<br/>
+                    <br/>
+                    //Ou bien:<br/>
+                    var result = 27%4; // Le result sera 3. Car 27/4 = 6 (6 * 4 = 24) et il reste 3 (27 - 24 = 3).
+                </pre>
+
+                <p><span class="badge">Conseil:</span> Le modulo est utile pour pas mal d'algorithme. Notamment pour savoir si un nombre est pair en utilisant le modulo de 2 "<span class="badge">x%2</span>", pour faire des systèmes de pagination, pour récupérer une image dans une sprite sheet etc...</p>
+
+                <p class="example">- Exemple pour les spites sheet:</p>
+
+                <p>Imaginons j'ai une sprite sheet de 16 images réparti en colonne de 4 et en ligne de 4.</p>
+
+                <img src="assets/img/sprite-sheet.jpg">
+
+                <p>On va se dire que chaques sprites font 32 pixels de long et 32 pixels de haut.</p>
+
+                <p>Visuellement ça donnerais ça:</p>
+
+                <img src="assets/img/sprite-sheet-with-size.jpg">
+
+                <p>Maintenant que l'on connait les dimensions x et y de chaques sprites. Je vais les numérotés. Cela sera bien plus visible pour nous lorsque l'on voudra récupérer l'une des textures.</p>
+
+                <img src="assets/img/sprite-sheet-with-count.jpg">
+
+                <p>Comme vous le remarquez, mon premier sprite commence par 0. Car la liste de sprite, en réalité, sera une sorte de tableau à 2 dimensions. Et Comme vu dans le précédent chapitre. Nous avons appris que les index en programmation commencaient par 0. Alors gardons cette logique.</p>
+
+                <p>Voila nous avons nos bases. Il nous reste plus qu'à récupérer une texture et je souhaites récupérer les coordonnées de mon sprite qu'en donnant son numéro. Imaginons le numéro 10 qui se trouve à la 3ème ligne et à la 3ème colonne.</p>
+
+                <img src="assets/img/sprite-sheet-selected.jpg">
+
+                <p>Avant de commencé nos calcules il est important de savoir quel point nous devons récupérer avant. Pour les images nous récuperons toujours le point en haut à gauche. (indiqué en jaune)</p>
+
+                <img src="assets/img/sprite-sheet-selected-point.jpg">
+
+                <p>Un point dans une image correspond à deux coordonées. Le x et le y. Pour notre cas il nous faudra donc determiné la position x et y de notre sprite (la coordonnée qui correspond au point jaune de la sprite numéro 10).</p>
+
+                <p>Commençons déjà par poser nos variables que l'on connait déjà:</p>
+
+                <pre class="code">
+                    //Le numéro de notre texture.<br/>
+                    var texture = 10;<br/>
+                    <br/>
+                    //La longueur d'une sprite.<br/>
+                    var spriteWidth = 32;<br/>
+                    <br/>
+                    //la hauteur d'une sprite.<br/>
+                    var spriteHeight = 32;<br/>
+                    <br/>
+                    //Le nombre de colonne de notre image.<br/>
+                    var imageColumns = 4;<br/>
+                    <br/>
+                    //Le nombre de ligne de notre image.<br/>
+                    var imageRows = 4;
+                </pre>
+
+                <p>Lançons nous maintenant dans la récupération de la coordonnée x (donc la position de la colonne).</p>
+
+                <pre class="code">
+                    // Pour récupérer le x il nous faudra utiliser le modulo.<br/>
+                    var x = texture % imageColumns; // Notre resultat sera 2 (soit la 3ème colonne vu que l'index commence par 0). (10 % 4 = 2 soit 4 * 2 = 8 et il reste 2.)
+                </pre>
+
+                <p>Maintenant que l'on a un premier resultat il nous faut la débogué pour être sur que le calcule sera toujours correct. Pour cela il nous suffit de regarder pour les autres textures.</p>
+
+                <pre class="code">
+                    // Pour notre première texture (donc la numéro 0) ça donnerai:<br/>
+                    var x = 0 % imageColumns; // Le resultat sera 0%4=0 soit la première colonne. On en conclu que c'est correct.<br/>
+                    <br/>
+                    //Testons pour la dernière texture (donc la numéro 15):<br/>
+                    var x = 15 % imageColumns; // Le resultat sera 15%4=3 donc la 4ème colonne. Encore une fois on en conclu que c'est correct. (3*4=12 et il restera 3.)
+                </pre>
+
+                <p>A vous de vérifier ensuite chaque valeur possible. Et vous constaterez que l'on sera toujours entre les colonnes 0 et 3.</p>
+
+                <p>Passons maintenant à la coordonnée y. Pour cela rien de compliqué. Il nous suffit de diviser le numéro de notre texture par le nombre de ligne.</p>
+
+                <pre class="code">
+                    var y = texture / imageRows; // Le resultat sera 10 / 4 = 2.5.<br/>
+                    // Le probleme maintenant est de reconvertir le float en entier arrondit à l'unité inférieur.<br/>
+                    // pour cela il y a plusieurs méthodes mais comme je suis sur un cours de modulo alors nous l'utiliserons.<br/>
+                    y -= y%1; // ça correspond à faire: y = y - y%1<br/>
+                    //Le y%1 = 2.5%1 = 0.5<br/>
+                    //Ensuite y - y%1 = 2.5 - 2.5%1 = 2.5 - 0.5 = 2.
+                </pre>
+
+                <p>Maintenant que l'on a nos coordonnées x et y. Nous pouvons récupérer correctement notre sprite sur l'image en multipliant nos valeurs par la longueur ou la hauteur.</p>
+
+                <pre class="code">
+                    var x = texture % imageColumns; // Resultat: 2<br/>
+                    var y = texture / imageRows; // Resultat: 2.5<br/>
+                    y -= y%1; // Resultat: 2<br/>
+                    <br/>
+                    var posX = x * spriteWidth; // Resultat: 2 * 32 = 64<br/>
+                    var posY = y * spriteHeight; // Resultat: 2 * 32 = 64
+                </pre>
+
+                <p>Nous avons désormais les coordonnées de notre texture numéro 10. A vous d'essayer les calcules pour récupérer les autres textures.</p>
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="concatenation">
+                <h2>La concaténation</h2>
+                <p>Tout d'abord, qu'est-ce que la concaténation ?</p>
+                <p>La concaténation est le fait de fusionner plusieurs éléments dans une chaine de caractère. Chaques variables sont séparés par un <span class="badge">+</span> comme pour l'addition donc à ne pas confondre.</p>
+
+                <pre class="code">
+                    var name = 'Doe';<br/>
+                    var lastname = 'John';<br/>
+                    <br/>
+                    var fullName = lastname + ' ' + name; //Resultat: John Doe
+                </pre>
+
+                <p>Il est également possible de fusionner d'autre éléments entre eux mais attention au placement des éléments lors de la concaténation.</p>
+
+                <pre class="code">
+                    var name = 'Doe';<br/>
+                    var lastname = 'John';<br/>
+                    var age = 37;<br/>
+                    var dateBirthday = 12;<br/>
+                    <br/>
+                    var result = lastname + ' ' + name + ' est né un ' + dateBirthday + ' et à ' + age + ' ans.';<br/>
+                    //Resultat: John Doe est né un 12 et à 37 ans.<br/>
+                    <br/>
+                    var result = age + dateBirthday + ' ' + lastname + ' ' + name + '.';<br/>
+                    //Resultat: 49 John Doe.<br/>
+                    <br/>
+                    var result = lastname + ' ' + name + ' ' + age + dateBirthday + '.';<br/>
+                    //Resultat: John Doe 3712.
+                </pre>
+
+                <p>Les concaténations par defaut, et comme tout, sont interprétés de gauche à droit. par conséquent s'il croise un nombre en premier alors il ne se dira pas tout de suite que l'on souhaite faire une concaténation. Par conséquent il fera les calcules de tous les nombre qu'il verra avant une chaine de caractère mais une fois dans cette chaine alors il y restera quoi qu'il arrive.</p>
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="ordreDePriorite">
+                <h2>Les ordres de priorité</h2>
+                <p>En mathématiques il y a un ordre de priorité sur les calcules. Comme vous le savez déjà les multiplications et les divisions sont prioritaires.</p>
+                <p>Cependant il est possible de forcer une priorité à un calcul en utilisant les <span class="badge">parenthèses</span>.</p>
+                <pre class="code">
+                    var result = 10 + 5 * 2 + 4; //Resultat = 10 + 10 + 4 = 24<br/>
+                    var result = (10 + 5) * (2 + 4); //Resultat = 15 * 6 = 90
+                </pre>
+
+                <p>Cela vaut aussi pour la concaténation</p>
+                <pre class="code">
+                    var result = 'John Doe à ' + 12 + 5 + ' pommes.'; // Resultat: John Doe à 125 pommes.<br/>
+                    var result = 'John Doe à ' + ( 12 + 5 ) + ' pommes.'; // Resultat: John Doe à 17 pommes.
+                </pre>
+            </section>
+
+            <div class="buttons">
+                <a href="creer-des-variables-et-les-afficher.html">Créer des variables et les affichér</a>
+                <a href="index.html">Revenir au sommaire</a>
+            </div>
+        </main>
+
+        <!-- Ce script me permet d'avoir les couleurs sur les codes d'exemple sur la page HTML. -->
+        <script src="assets/js/pre-code.js"></script>
+    </body>
+</html>
