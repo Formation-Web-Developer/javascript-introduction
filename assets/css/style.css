@@ -1,0 +1,184 @@
+:root{
+    --color-bg-1: #303030;
+    --color-bg-2: #444;
+    --color-bg-3: #888;
+    --color-bg-4: #bebebe;
+    --color-link: #00bc8c;
+    --color-text: white;
+    --color-alert: #e74c3c;
+    --color-warn: #f39c12;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--color-bg-1);
+    color: white;
+}
+
+a{
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h1, h2, h3{
+    padding: 1rem 0;
+}
+
+p{
+    margin: .5rem 0;
+}
+
+header{
+    position: sticky;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 0;
+}
+
+header p{
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+header nav{
+    background-color: var(--color-bg-1);
+    position: absolute;
+    top: 100%;
+    width: 0%;
+    transition: .2s;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-align: right;
+}
+
+img{
+    max-width: 100%;
+}
+
+header nav.active{
+    width: 100%;
+}
+
+header li{
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-bg-3);
+}
+
+header li:last-child{
+    border-bottom: 1px solid transparent;
+}
+
+.badge{
+    color: var(--color-link);
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem .7rem;
+}
+
+.btn, .buttons a{
+    display: block;
+    cursor: pointer;
+    padding: 1rem;
+    background-color: var(--color-bg-2);
+    color: var(--color-text);
+    border-radius: .2rem;
+    margin: .7rem 0;
+}
+
+.separator{
+    border-bottom: 1px solid var(--color-bg-3);
+    margin: 1rem 0;
+}
+
+.alert{
+    color: var(--color-alert);
+}
+
+.warn{
+    color: var(--color-warn);
+    padding: 1rem;
+}
+
+pre.hljs{
+    display: block;
+    white-space: normal;
+    padding: 1rem;
+    margin: 1rem auto;
+    background-color: var(--color-bg-4);
+}
+
+.hljs-reserved{
+    color: #00f;
+}
+
+span.javascript, span.hljs-number{
+    color: #a31515;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons a{
+    text-align: center;
+    width: 49%;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+@media (min-width: 992px)
+{
+    body{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    header{
+        width: 20%;
+        height: fit-content;
+        padding: 3rem;
+    }
+
+    header p{
+        display: none;
+    }
+
+    header nav{
+        width: 100%;
+        position: static;
+        white-space: normal;
+    }
+
+    main{
+        width: 90%;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .container{
+        width: 992px;
+    }
+}

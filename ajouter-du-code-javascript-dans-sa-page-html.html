@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ajouter du code JavaScript dans sa page HTML - Cours JavaScript</title>
+        <link rel="stylesheet" href="assets/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+
+        <header>
+            <p onclick="onMenu()"><i class="fas fa-bars"></i></p>
+            <nav id="navbar" onclick="onMenu()">
+                <ul>
+                    <li><a href="index.html">Sommaire</a></li>
+                    <li><a href="#syntaxe">Syntaxe</a></li>
+                    <li><a href="#position">Positionnement</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main class="container">
+            <h1>Ajouter du code JavaScript dans sa page HTML</h1>
+
+            <div class="separator"></div>
+
+            <section id="syntaxe">
+                <h2>La syntaxe de la balise <span class="badge">script</span></h2>
+
+                <p>Il y a deux façon pour ajouter un script sur le fichier HTML.</p>
+
+                <p>La première est d'ajouter directement le code entre la balise <span class="badge">script</span>.</p>
+                <pre class="code">
+                    &lt;script&gt;
+                        // Ici on y mettra notre code JavaScript.
+                    &lt;/script&gt;
+                </pre>
+                <p>Et la deuxième est de passer par un fichier <span class="badge">.js</span> et de donner son chemin avec l'attribut <span class="badge">src</span>.</p>
+                <pre class="code">
+                    &lt;script src="assets/js/nom-du-fichier.js"&gt;&lt;/script&gt;
+                </pre>
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="position">
+                <h2>Le positionnement de la balise <span class="badge">script</span> sur le fichier HTML.</h2>
+                <p>L'emplacement de la balise <span class="badge">script</span> est assez importante suivant les cas d'utilisation du script.</p>
+                <p>Si le script n'influe pas spécialement sur la page html. Alors elle pourra-être placé dans la balise <span class="badge">head</span>.</p>
+                <pre class="code">
+                    &lt;!DOCTYPE html&gt;<br/>
+                    &lt;html&gt;<br/>
+                    &nbsp;&nbsp;&lt;head&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Titre de la page&lt;/title&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="assets/js/nom-du-fichier.js"&gt;&lt;/script&gt;<br/>
+                    &nbsp;&nbsp;&lt;/head&gt;<br/>
+                    &lt;/html&gt;
+                </pre>
+
+                <p>Sinon et par principe elle sera plutôt placé en dernier dans la balise <span class="badge">body</span>.</p>
+
+                <pre class="code">
+                    &lt;!DOCTYPE html&gt;<br/>
+                    &lt;html&gt;<br/>
+                    &nbsp;&nbsp;&lt;head&gt;&lt;/head&gt;<br/>
+                    &nbsp;&nbsp;&lt;body&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;&lt;/header&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;&lt;/main&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;&lt;/footer&gt;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="assets/js/nom-du-fichier.js"&gt;&lt;/script&gt;<br/>
+                    &nbsp;&nbsp;&lt;/body&gt;<br/>
+                    &lt;/html&gt;
+                </pre>
+
+                <p><span class="alert">Attention:</span> dans cet exemple j'ai indiqué le <span class="badge">src</span> mais il n'est pas obligatoire suivant les cas de possitionnement. Il est bien sûr possible d'ajouter directement le code dans les balises <span class="badge">script</span>.</p>
+
+            </section>
+
+            <div class="buttons">
+                <a href="index.html">Revenir au sommaire</a>
+                <a href="action-sur-les-balises-html.html">Les actions sur les balises HTML</a>
+            </div>
+        </main>
+
+        <!-- Ce script me permet d'avoir les couleurs sur les codes d'exemple sur la page HTML. -->
+        <script src="assets/js/pre-code.js"></script>
+    </body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ajouter du code JavaScript dans sa page HTML - Cours JavaScript</title>
+        <link rel="stylesheet" href="assets/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+
+        <header>
+            <p onclick="onMenu()"><i class="fas fa-bars"></i></p>
+            <nav id="navbar" onclick="onMenu()">
+                <ul>
+                    <li><a href="index.html">Sommaire</a></li>
+                    <li><a href="#syntaxeDeVariable">La syntaxe de la variable</a></li>
+                    <li><a href="#valeurs">Les valeurs possible d'une variable</a></li>
+                    <li><a href="#string">Les chaines de caractère</a></li>
+                    <li><a href="#integer">Les nombres entier</a></li>
+                    <li><a href="#float">Les nombres décimaux</a></li>
+                    <li><a href="#boolean">Les valeurs booléennes</a></li>
+                    <li><a href="#tableau">Les tableaux</a></li>
+                    <li><a href="#objet">Les objets</a></li>
+                    <li><a href="#afficherLaVariable">Afficher une variable</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h1>Créer des variables et les afficher</h1>
+
+            <div class="separator"></div>
+
+            <p><span class="alert">Attention:</span> A partir de ce chapitre nous serons dans un fichier <span class="badge">JavaScript</span> séparé de l'html. Donc n'oubliez pas d'ajouter la balise <span class="badge">script</span> sur votre page html avec l'attribut <span class="badge">src</span>. Plus d'information sur:</p>
+            <a href="ajouter-du-code-javascript-dans-sa-page-html.html">Ajouter du code javascript dans sa page HTML</a>
+
+            <div class="separator"></div>
+
+            <section id="syntaxeDeVariable">
+                <h2>La syntaxe pour déclarer une variable.</h2>
+
+                <p>Pour bien commencé il est important de voir la bonne syntaxe pour déclarer sans problème une variable.</p>
+
+                <pre class="code">
+                    type name = value;
+                </pre>
+
+                <p>Il existe <span class="badge">3</span> types différents de variable</p>
+                <p class="warn"><span class="badge">var</span>, <span class="badge">let</span> et le <span class="badge">const</span></p>
+
+                <p>Je ne rentrerais pas dans les détailles tout de suite mais sachez que chaque type correspond à une portabilité (Un mot compliqué pour l'instant). Contentons nous du <span class="badge">var</span>.</p>
+
+                <p>Ensuite le nom devra être écrit en <span class="badge">camelCase</span> et généralement en <span class="badge">anglais</span> sans accent, ni espace ou caractère spéciaux. Et c'est vous qui décidez de l'appeler comme vous le souhaitez. (Mieux vaut aussi qu'il soit en rapport avec la donnée qu'elle comportera.)</p>
+
+                <p>Pour les valeurs, nous les verrons un peu plus bas.</p>
+
+                <p>Voici un exemple de variable avec une bonne syntaxe</p>
+
+                <pre class="code">
+                    var name = 'John Doe';
+                </pre>
+
+                <p><span class="alert">PS:</span> Comme vous le remarquez, il y a un point virgule à la fin. Sachez qu'il n'est pas obligatoire en <span class="badge">JavaScript</span>. Cependant nous prendrons l'habitude de le mettre. Cela indique une fin d'instruction, de plus il est souvent obligatoire dans d'autre langage de programmation telque <span class="badge">PHP</span> que l'on verra plus tard dans la formation.</p>
+            </section>
+
+            <div class="separator"></div>
+
+
+            <section id="valeurs">
+                <h2>Les valeurs possibles d'une variable.</h2>
+
+                <p>En programmation nous avons le choix entres différents types de variables qui sont plus ou moins similaire mais contentons nous de <span class="badge">JavaScript</span>.</p>
+
+                <h3 id="string">1- Les chaines de caractère</h3>
+
+                <p><span class="alert">String:</span> Ce type permet de déclarer une chaine de caractère. Elle sera entouré soit de <span class="badge">guillemet simple</span> ou de <span class="badge">guillemet double</span> ou bien de <span class="badge">guillemet simple inversé</span>.</p>
+                <p><span class="alert">Attention:</span> Pour les <span class="badge">guillemets simples inversés</span> je vous le mets en exemple mais c'est comme pour les <span class="badge">let</span> et les <span class="badge">const</span>. Nous ne les utiliserons pas dans l'immédiat.</p>
+
+                <pre class="code">
+                    var name = 'Doe';<br/>
+                    var lastname = "John";<br/>
+                    var country = `France`;
+                </pre>
+
+                <p><span class="alert">Conseil:</span> Si vous avez besoin d'ajouter un caractère dans votre chaine de caractère que vous utilisez pour englober votre chaine de caractère, vous devrez alors l'échapper avec <span class="badge">/</span></p>
+
+                <pre class="code">
+                    var message = 'C\'est chez John ou l\'on trouve les meilleurs tartes à la crême.';
+                </pre>
+
+                <h3 id="integer">2- Les nombres entiers</h3>
+                <p><span class="alert">Integer</span> ou <span class="alert">int:</span> Ce type permet de déclarer un nombre entier. Ce qui signifie qu'il ne peut y avoir de décimale.</p>
+
+                <pre class="code">
+                    var age = 37;
+                </pre>
+
+                <h3 id="float">3- Les nombres décimaux</h3>
+                <p><span class="alert">Float</span> ou <span class="alert">Double:</span> Ce type permet de déclarer un nombre qui accepte les décimales.</p>
+
+                <pre class="code">
+                    var money = 135.37;
+                </pre>
+
+                <p><span class="alert">Attention:</span> Comme vous pourrez le constater, nous n'utilisons pas la <span class="badge">virgule</span> pour nos nombres floatant. Les langages de programmation ont étés faits sur la base de l'anglais. Par conséquent nous utlisons les <span class="badge">points</span> à la place des <span class="badge">virgules</span>.</p>
+
+                <p>Si jamais nous devons utiliser des gros nombres, nous ne pourrons pas non plus utiliser la <span class="badge">virgule</span> mais nous pouvons utiliser les <span class="badge">underscore</span> pour séparer en paquet de millier. C'est toujours plus jolie et plus compréhensible.</p>
+
+                <pre class="code">
+                    var money = 1_000_125.59;<br/>
+                    //Au lieu de:<br/>
+                    var money = 1000125.59;
+                </pre>
+
+                <h3 id="boolean">3- Les valeurs booléennes.</h3>
+                <p><span class="alert">Booléan:</span> Ce type permet de déclarer une valeur qui sera soit <span class="badge">vrai</span> soit <span class="badge">faux</span>.</p>
+
+                <pre class="code">
+                    var value = true;<br/>
+                    var value = false;
+                </pre>
+
+                <h3 id="tableau">4- Les tableaux.</h3>
+
+                <p><span class="alert">Array</span> ou <span class="alert">Collection:</span> Ce type permet de déclarer une liste d'élément. Elle sera entouré de <span class="badge">crochet</span> et contiendra n'importe qu'elle type de valeur.</p>
+
+                <pre class="code">
+                    var items = ['Chien', 'Chat', 25, 4.369, true, false];
+                </pre>
+
+                <p>Pour récupérer un éléments d'un tableau nous utiliserons son <span class="badge">index</span>. C'est à dire le numéro de la case ou ce trouve l'objet en question entouré de <span class="badge">crochet</span> après le nom de la variable qui contient le tableau.</p>
+                <p><span class="alert">Attention:</span> Les tableaux dans la plupart des langage de programmation ne commence pas par <span class="badge">1</span> mais par <span class="badge">0</span>. Cela vaut aussi pour <span class="badge">JavaScript</span>. Par conséquent, si je souhaite récupérer la <span class="badge">3ème</span> valeur de la liste, j'utiliserais l'index <span class="badge">2</span>.</p>
+
+                <pre class="code">
+                    var items = ['Chien', 'Chat', 25, 4.369, true, false];<br/>
+                    var item = items[2]; //item sera égale à 25.
+                </pre>
+
+                <h3>5- Les tableaux à multi-dimension.</h3>
+
+                <p>Alors cette partie est un bonus mais c'est quand même bon à savoir.</p>
+                <p>Il existe plusieurs dimension pour les tableaux. (De une à théoriquement une infinité.)</p>
+                <p>Le tableau que l'on a utilisé au dessus est un tableau par défaut. C'est à dire à une dimension. Si nous voulons plus de dimension alors il nous faudra ajouter des tableaux dans le tableaux initiale.</p>
+                <p>C'est confus ? Alors ne vous inquiétez pas c'est normal. Ce n'est pas évident à prendre en main mais une petite démonstration ne sera pas de trop:</p>
+
+                <pre class="code">
+                    var items = [<br/>
+                    &nbsp;&nbsp;['Chien', 'Chat']<br/>
+                    ];
+                </pre>
+                <p>La je viens de créer un tableau à deux dimensions. C'est à dire, un tableau dans un tableau. Pour récupéré la valeur <span class="badge">Chat</span>, je devrais d'abord aller chercher mon tableau dans mon tableau initial. La ce n'est pas dur il est à la première position. Ensuite je pourrais récupérer ma valeur <span class="badge">Chat</span> qui se trouve à la seconde position.</p>
+                <p>En code ça donne ceci:</p>
+
+                <pre class="code">
+                    var items = [<br/>
+                    &nbsp;&nbsp;['Chien', 'Chat']<br/>
+                    ];<br/>
+                    var item = items[0]; // La je récupère mon tableau qui contient la valeur chien et chat.<br/>
+                    var result = item[1]; // Et la je récupère ma valeur chat. <br/>
+
+                    //En plus court ça donnerai ça:<br/>
+                    var result = items[0][1]; // Et la vous comprenez pourquoi on utilise le terme de dimension.
+                </pre>
+
+                <p>Comme vous le remarquez, nous avons utilisés deux fois les crochet pour récupéré notre valeur. C'est ainsi que l'on compte le nombre de dimension. En conclusion si nous avons un tableau à 3 dimensions alors nous aurions 3 fois des crochet pour récupérer notre valeur final.</p>
+
+                <p>Cela était surtout à but de démonstration. Ne vous prenez pas la tête sur ça ou bien demandez à vive voix pour plus d'explication.</p>
+
+                <h3 id="objet">6- Les objets</h3>
+                <p><span class="alert">Object:</span> Ce type permet de déclarer une collection de clé qui contiendront chacunes des valeurs différentes. L'object sera entouré d'<span class="badge">accolade</span> et chaques clés seront suivi du <span class="badge">deux points</span> et séparé par des <span class="badge">virgules</span>.</p>
+
+                <pre class="code">
+                    var user = {<br/>
+                    &nbsp;&nbsp;name: 'Doe',<br/>
+                    &nbsp;&nbsp;lastname: 'John',<br/>
+                    &nbsp;&nbsp;age: 37,<br/>
+                    &nbsp;&nbsp;country: 'France'<br/>
+                    }
+                </pre>
+
+                <p>Pour appeler une variable dans un objet on utilisera le <span class="badge">point</span> comme séparateur.</p>
+
+                <pre class="code">
+                    var user = {<br/>
+                    &nbsp;&nbsp;name: 'Doe',<br/>
+                    &nbsp;&nbsp;lastname: 'John',<br/>
+                    &nbsp;&nbsp;age: 37,<br/>
+                    &nbsp;&nbsp;country: 'France'<br/>
+                    }<br/>
+                    var userName = user.name;
+                </pre>
+
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="afficherLaVariable">
+                <h2>Afficher une variable dans la console.</h2>
+                <p>Pour pouvoir afficher une variable dans la console il suffit d'utiliser l'objet <span class="badge">console</span> et d'appeler la fonction <span class="badge">log</span> puis de placer l'objet ciblé en paramètre de la fonction.</p>
+
+                <pre class="code">
+                    var name = 'John Doe';<br/>
+                    console.log(name); // Afficher John Doe dans la console.<br/>
+                    <br/>
+                    var items = ['Chien', 'Chat'];<br/>
+                    console.log(items); // Afficher le tableau dans la console.<br/>
+                    console.log(items[1]); // Afficher Chat dans la console.
+                </pre>
+            </section>
+
+            <div class="buttons">
+                <a href="action-sur-les-balises-html.html">Les actions sur les balises HTML</a>
+                <a href="index.html">Revenir au sommaire</a>
+            </div>
+        </main>
+
+        <!-- Ce script me permet d'avoir les couleurs sur les codes d'exemple sur la page HTML. -->
+        <script src="assets/js/pre-code.js"></script>
+    </body>
+</html>

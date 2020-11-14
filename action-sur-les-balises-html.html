@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ajouter du code JavaScript dans sa page HTML - Cours JavaScript</title>
+        <link rel="stylesheet" href="assets/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+
+        <header>
+            <p onclick="onMenu()"><i class="fas fa-bars"></i></p>
+            <nav id="navbar" onclick="onMenu()">
+                <ul>
+                    <li><a href="index.html">Sommaire</a></li>
+                    <li><a href="#writeInElements">Ecrire du Javascript dans une balise</a></li>
+                    <li><a href="#eventManager">Les gestionnaires d'événements</a></li>
+                    <li><a href="#exercice">Correction de l'exercice</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main class="container">
+            <h1>Les actions sur les balises HTML</h1>
+
+            <div class="separator"></div>
+
+            <section id="writeInElements">
+                <h2>Ecrire du <span class="badge">JavaScript</span> dans les éléments.</h2>
+                <p>
+                    Dans le chapitre précédent nous avons vu comment placer du code javascript dans une balise <span class="badge">script</span>.
+                    Mais il faut savoir qu'il est également possible d'écrire du <span class="badge">JavaScript</span> dans les éléments.
+                </p>
+
+                <p>En utilisant un attribut dédié aux évenements de <span class="badge">JavaScript</span>.</p>
+                <pre class="code">
+                    &lt;p onclick="prompt('Entrez une valeur');"&gt;Cliquez pour voir le prompt.&lt;/p&gt;
+                </pre>
+
+                <p>Ou dans le <span class="badge">href</span> d'une balise avec en utilisant le préfix <span class="badge">javascript:</span> avant le code souhaitez.</p>
+                <pre class="code">
+                    &lt;a href="javascript:prompt('Entrez une valeur')"&gt;Cliquez pour voir le prompt.&lt;/a&gt;
+                </pre>
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="eventManager">
+                <h2>La liste des événements possibles dans un attribut HTML</h2>
+                <p>Il est possible d'utiliser plusieurs événements dans les attribut HTML.</p>
+
+                <pre class="code">
+                    onclick: Appelé lorsque l'on clique sur l'élément.<br/>
+                    ondblclick: Appelé lorsque l'on double clique sur l'élément.<br/>
+                    onmouseover: Appelé lorsque la souris survole l'élément.<br/>
+                    onmouseout: Appelé lorsque la souris sort de l'élément.<br/>
+                    onload: Appelé lorsque l'élément charge.<br/>
+                    onunload: Appelé lorsque l'élément décharge.
+                </pre>
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="exercice">
+                <h2>Correction de l'exercice</h2>
+                <p>Un exercice en deux partie nous avez était donné.</p>
+                <p>Le premier avait pour but de:</p>
+                <p class="warn">Mettre une balise <span class="badge">img</span> et lorsque l'on double clique sur celle-ci alors une alerte devait s'afficher avec le message <span class="badge">Double Clique</span>.</p>
+                <p>Pour cela il suffisait d'ajouter l'attribut <span class="badge">ondblclick</span> dans la balise <span class="badge">img</span> et utiliser la fonction <span class="badge">alert()</span> de JavaScript.</p>
+
+                <pre class="code">
+                    &lt;img src="https://picsum.photos/300/300" ondblclick="alert('Double Clique');"&gt;
+                </pre>
+
+                <h3>Rendu de l'exercice</h3>
+                <img src="https://picsum.photos/300/300" ondblclick="alert('Double Clique')">
+
+                <p>Le second avait pour but de:</p>
+                <p class="warn">Ajouter un attribut pour détecter si la souris sortait de la balise <span class="badge">img</span> et y afficher une alerte avec le message <span class="badge">La souris est sortie de l'image</span>.</p>
+                <p>Pour cela il fallait ajouter l'attribut <span class="badge">onmouseout</span> à notre balise <span class="badge">img</span> et utiliser la fonction <span class="badge">alert()</span> de JavaScript.</p>
+
+                <pre class="code">
+                    &lt;img src="https://picsum.photos/300/300" ondblclick="alert('Double Clique');" onmouseout="alert('La souris est sortie de l\'image');"&gt;
+                </pre>
+
+                <h3>Rendu de l'exercice</h3>
+                <img src="https://picsum.photos/300/300" ondblclick="alert('Double Clique')" onmouseout="alert('La souris est sortie de l\'image');">
+            </section>
+
+            <div class="buttons">
+                <a href="ajouter-du-code-javascript-dans-sa-page-html.html">Ajouter du code JavaScript dans sa page HTML</a>
+                <a href="creer-des-variables-et-les-afficher.html">Créer des variables et les afficher</a>
+            </div>
+        </main>
+
+        <!-- Ce script me permet d'avoir les couleurs sur les codes d'exemple sur la page HTML. -->
+        <script src="assets/js/pre-code.js"></script>
+    </body>
+</html>
