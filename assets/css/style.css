@@ -207,3 +207,18 @@ span.javascript, span.hljs-number{
         width: 992px;
     }
 }
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-bg-1);
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+    background-color: var(--color-bg-1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-bg-2);
+    border-radius: 3px;
+}
