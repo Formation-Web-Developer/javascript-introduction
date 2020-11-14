@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Les opérateurs et les conditions - Cours JavaScript</title>
+        <link rel="stylesheet" href="assets/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <p onclick="onMenu()"><i class="fas fa-bars"></i></p>
+            <nav id="navbar" onclick="onMenu()">
+                <ul>
+                    <li><a href="index.html">Sommaire</a></li>
+                    <li><a href="#operateursDeComparaison">Les opérateurs de comparaison</a></li>
+                    <li><a href="#estEgaleA">La comparaison d'égalité faible (==)</a></li>
+                    <li><a href="#estStrictementEgaleA">La comparaison d'égalité strict (===)</a></li>
+                    <li><a href="#estDifferentDe">La comparaison de différence faible (!=)</a></li>
+                    <li><a href="#estStrictementDifférentDe">La comparaison de différence strict (!==)</a></li>
+                    <li><a href="#estInferieurA">L'opérateur inférieur strict (<)</a></li>
+                    <li><a href="#estInferieurOuEgaleA">L'opérateur inférieur faible (<=)</a></li>
+                    <li><a href="#estSupérieurA">L'opérateur supérieur strict (>)</a></li>
+                    <li><a href="#estSupérieurOuEgaleA">L'opérateur supérieur faible (>=)</a></li>
+                    <li><a href="#operateursLogiques">Les opérateurs logiques</a></li>
+                    <li><a href="#operateurEt">L'opérateur logique ET (&&)</a></li>
+                    <li><a href="#operateurOu">L'opérateur logique OU (||)</a></li>
+                    <li><a href="#prioriteDesOperateursLogiques">La priorité des opérateurs logiques</a></li>
+                    <li><a href="#lesConditions">Les conditions</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h1>Les opérateurs et les conditions.</h1>
+
+            <div class="separator"></div>
+
+            <section id="operateursDeComparaison">
+                <h2>Les opérateurs de comparaison</h2>
+
+                <p>Les opérateurs de comparaison sont des expréssion qui returnent des valeurs booléennes en fonction de deux variables/valeurs.</p>
+
+                <h3 id="estEgaleA">La comparaison d'égalité faible (est égale à)</h3>
+
+                <p>Cette comparaison est assez spécial. Elle va temporairement transformer (et si possible) les types des variables et comparer leur valeur entre eux.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">==</span>.</p>
+
+                <pre class="code">
+                    var result = 1 == 0; //result sera égale à false.<br/>
+                    <br/>
+                    //Pour ce cas, il va transformer la chaine de caractère en un entier vu que c'est possible.<br/>
+                    var result = 1 == '1'; //result sera égale à true.<br/>
+                    <br/>
+                    //Pour ce cas, il va transformer le boolean en 0 (False = 0 et True = 1)<br/>
+                    var result = 0 == false; //result sera égale à true.<br/>
+                    var result = 1 == true; //result sera égale à true.<br/>
+                    var result = 2 == true; //result sera égale à false.<br/>
+                </pre>
+
+                <h3 id="estStrictementEgaleA">La comparaison d'égalité strict (est strictement égale à)</h3>
+
+                <p>Cette comparaison prendra en compte le type est la valeur de l'élément.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">===</span></p>
+
+                <pre class="code">
+                    var result = 1 === 0; //result sera égale à false.<br/>
+                    <br/>
+                    //Pour ce cas, il ne fera pas la transformation.<br/>
+                    var result = 1 === '1'; //result sera égale à false.<br/>
+                    <br/>
+                    //Pareil pour ce cas.<br/>
+                    var result = 1 === true; //result sera égale à false.
+                </pre>
+
+                <h3 id="estDifferentDe">La comparaison de différence faible (est différent de)</h3>
+
+                <p>Cette comparaison est comme pour l'égalité faible. Elle va temporairement transformer (et si possible) les types des variables et comparer leur valeur entre eux.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">!=</span>.</p>
+
+                <pre class="code">
+                    var result = 1 != 1; // result sera égale à false.<br/>
+                    <br/>
+                    //Pour ce cas, il va transformer la chaine de caractère en un entier vu que c'est possible.<br/>
+                    var result = 1 != '1'; //result sera égale à false.<br/>
+                </pre>
+
+                <h3 id="estStrictementDifférentDe">La comparaison de différence strict (est strictement différent de)</h3>
+
+                <p>Cette comparaison prendra en compte le type est la valeur de l'élément.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">!==</span></p>
+
+                <pre class="code">
+                    var result = 1 !== 1; // result sera égale à false.<br/>
+                    <br/>
+                    //Pour ce cas, il ne va pas transformer la chaine de caractère en un entier.<br/>
+                    var result = 1 !== '1'; //result sera égale à true.<br/>
+                </pre>
+
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="operateursRelationnels">
+                <h2>Les opérateurs relationnels</h2>
+
+                <p>Les opérateurs relationnels sont des expréssions qui returnent des valeurs booléennes en fonction de deux variables/valeurs. Elle sont majoritairement utilisés pour des nombres.</p>
+
+                <h3 id="estInferieurA">La relations inférieur strict (est inférieur à)</h3>
+
+                <p>Cette relation regardera la valeur numérique des deux éléments est déterminera si la première valeur est bien inféreur à la seconde.</p>
+                <p>La syntaxe s'écrit avec <span class="badge"><</span></p>
+
+                <pre class="code">
+                    var result = 1 < 0; //result sera égale à false.<br/>
+                    var result = 1 < 2; //result sera égale à true.
+                </pre>
+
+                <h3 id="estInferieurOuEgaleA">La relations inférieurs faible (est inférieur ou égale à)</h3>
+
+                <p>Cette relation regardera la valeur numérique des deux éléments est déterminera si la première valeur est bien inféreur ou égale à la seconde.</p>
+                <p>La syntaxe s'écrit avec <span class="badge"><=</span></p>
+
+                <pre class="code">
+                    var result = 1 <= 0; //result sera égale à false.<br/>
+                    var result = 1 <= 1; //result sera égale à true.<br/>
+                    var result = 1 <= 2; //result sera égale à true.
+                </pre>
+
+                <h3 id="estSupérieurA">La relations supérieurs strict (est supérieur à)</h3>
+
+                <p>Cette relation regardera la valeur numérique des deux éléments est déterminera si la première valeur est bien supérieur à la seconde.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">></span></p>
+
+                <pre class="code">
+                    var result = 1 > 0; //result sera égale à true.<br/>
+                    var result = 1 > 2; //result sera égale à false.
+                </pre>
+
+                <h3 id="estSupérieurOuEgaleA">La relations supérieurs faible (est supérieur ou égale à)</h3>
+
+                <p>Cette relation regardera la valeur numérique des deux éléments est déterminera si la première valeur est bien supérieur ou égale à la seconde.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">>=</span></p>
+
+                <pre class="code">
+                    var result = 1 >= 0; //result sera égale à true.<br/>
+                    var result = 1 >= 1; //result sera égale à true.<br/>
+                    var result = 1 >= 2; //result sera égale à false.
+                </pre>
+
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="operateursLogiques">
+                <h2>Les opérateurs logiques</h2>
+
+                <p>Les opérateurs logiques sont également appelés des portes logiques. Ils permettent de savoir si un ou plusieurs (suivant l'opérateur choisi) type de comparaison sont vrai.</p>
+
+                <h3 id="operateurEt">L'opérateur ET</h3>
+
+                <p>Cette porte permet de savoir si tous les resultats placés sont vrai.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">&&</span></p>
+
+                <pre class="code">
+                    var result = 25 != 24 && 26 == 27; //result sera égale à false.<br/>
+                    var result = 25 != 24 && 26 <= 27; //result sera égale à true.<br/>
+                    <br/>
+                    //Il est bien sur possible d'ajouter plusieurs porte && sur une même ligne.<br/>
+                    var result = 25 != 24 && 26 < 27 && 40 > 5; //result sera égale à true.
+                </pre>
+
+                <h3 id="operateurOu">L'opérateur OU</h3>
+
+                <p>Cette porte permet de savoir si au moins un résultat placé est vrai.</p>
+                <p>La syntaxe s'écrit avec <span class="badge">||</span></p>
+
+                <pre class="code">
+                    var result = 25 != 24 || 26 == 27; //result sera égale à true.<br/>
+                    var result = 25 == 24 || 26 >= 27; //result sera égale à false.<br/>
+                    <br/>
+                    //Il est bien sur possible d'ajouter plusieurs porte || sur une même ligne.<br/>
+                    var result = 25 != 24 || 26 < 27 || 40 > 5; //result sera égale à true.
+                </pre>
+
+                <h3 id="prioriteDesOperateursLogiques">La priorité des opérateurs logiques</h3>
+
+                <p>Tous comme pour les opérations, les opérateurs on un ordre de priorité. Pour ce cas, le <span class="badge">&&</span> sera prioritaire au <span class="badge">||</span>. Et comme pour les opérations il y a bien sur la possibilité d'utiliser les <span class="badge">parenthèses</span> pour forcer la priorité.</p>
+
+                <pre class="code">
+                    var result = 24 < 40 && 29 > 10 || 49 > 50 && 10 < -5; //Ce resultat sera égale à true;<br/>
+                    var result = 24 < 40 && (29 < 10 || 49 > 50) && 10 > -5; //Ce resultat sera égale à false;
+                </pre>
+            </section>
+
+            <div class="separator"></div>
+
+            <section id="lesConditions">
+                <h2>Les conditions</h2>
+                <p>Les conditions permettent d'executer des morceaux de code seulement si un opérateur retourne vrai.</p>
+                <p>Tout d'abord voyons la syntaxe.</p>
+                <pre class="code">
+                    //if = Si<br/>
+                    //else if = Sinon si <br/>
+                    //else = Sinon <br/>
+                    <br/>
+                    //operateurs = Opérateurs de comparaison et/ou Opérateurs rationnels et/ou Opérateurs logiques.  <br/>
+                    <br/>
+                    if(operateurs){<br/>
+                    &nbsp;&nbsp;//Si l'opérateur est vrai alors je rentre dans ce bloc.<br/>
+                    }else if(operateur){<br/>
+                    &nbsp;&nbsp;//Sinon si le premier opérateur est faux mais que le deuxième opérateur est vrai alors je rentre dans ce bloc. <br/>
+                    &nbsp;&nbsp;//Il n'est pas nécessaire d'avoir des else if mais dans tous les cas si on en a besoin il devra obligatoirement avoir un if avant. <br/>
+                    &nbsp;&nbsp;//On n'est pas limité à un seul else if. Il peut y en avoir plusieurs.<br/>
+                    }else{<br/>
+                    &nbsp;&nbsp;//Sinon si aucun des deux opérateur est vrai alors je rentre dans ce bloc. <br/>
+                    &nbsp;&nbsp;//Il n'est pas nécessaire d'avoir des else mais dans tous les cas si on en a besoin il devra en avoir qu'un seul et devra être placé apres le if (obligatoire) et les else if (s'il y en a).<br/>
+                    }
+                </pre>
+
+                <p>Plaçons un petit exemple:</p>
+                <pre class="code">
+                    var age = 4;<br/>
+                    <br/>
+                    if(age >= 18){<br/>
+                    &nbsp;&nbsp;console.log('Vous êtes majeur');<br/>
+                    &nbsp;&nbsp;//Il peut également avoir des conditions dans des conditions. Il n'y aucune limite à cela. <br/>
+                    &nbsp;&nbsp;if(age >= 65){<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log('Vous êtes à l\'age de la retraite.');<br/>
+                    &nbsp;&nbsp;}<br/>
+                    }else if(age > 12){<br/>
+                    &nbsp;&nbsp;console.log('Vous êtes un ados.');<br/>
+                    }else{<br/>
+                    &nbsp;&nbsp;console.log('Vous n\'êtes encore qu\'un enfant.');<br/>
+                    &nbsp;&nbsp;if(age >= 3 && age <= 6){<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log('Vous êtes à la maternelle.');<br/>
+                    &nbsp;&nbsp;}<br/>
+                    }<br/>
+                    <br/>
+                    // Vous aurez dans votre console:<br/>
+                    // Vous n'êtes encore qu'un enfant. <br/>
+                    // Vous êtes à la maternelle.
+                </pre>
+            </section>
+
+            <div class="buttons">
+                <a href="la-concatenation-et-les-operations.html">La concaténation et les opérations</a>
+                <a href="index.html">Revenir au sommaire</a>
+            </div>
+        </main>
+
+        <!-- Ce script me permet d'avoir les couleurs sur les codes d'exemple sur la page HTML. -->
+        <script src="assets/js/pre-code.js"></script>
+    </body>
+</html>
