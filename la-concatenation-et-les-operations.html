@@ -47,10 +47,16 @@
                 <pre class="code">
                     var x = 12;<br/>
                     var y = 14;<br/>
-                    var result = x + y + 16;<br/>
+                    var result = x + y + 16;//Ce resultat donnera 42.<br/>
                     <br/>
                     //Ou bien:<br/>
-                    var result = 12 + 14 + 16;
+                    var result = 12 + 14 + 16;//Ce resultat donnera 42.<br/>
+                    <br/>
+                    //Il est également possible de faire une incrémentation à une variable déjà existant.<br/>
+                    result += 2; //Ceci équivaut à faire: result = result + 2;<br/>
+                    <br/>
+                    //Pour la cas ou l'on devrais incrémenter de 1 notre result. Un syntaxe simplié existe:<br/>
+                    result++; //C'est comme: result+=1 ou result = result + 1;
                 </pre>
 
                 <h3 id="soustractions">2- Les soustractions</h3>
@@ -63,7 +69,13 @@
                     var result = x - y; //Ce resultat donnera un nombre négatif (-7) mais cela restera un entier valide. <br/>
                     <br/>
                     //Ou bien:<br/>
-                    var result = 27 - 34;
+                    var result = 27 - 34;<br/>
+                    <br/>
+                    //Il est également possible de faire une décrémentation à une variable déjà existant.<br/>
+                    result -= 2; //Ceci équivaut à faire: result = result - 2;<br/>
+                    <br/>
+                    //Pour la cas ou l'on devrais décrémenter de 1 notre result. Un syntaxe simplié existe:<br/>
+                    result--; //C'est comme: result-=1 ou result = result - 1;
                 </pre>
 
                 <h3 id="multiplications">3- Les multiplications</h3>
@@ -76,7 +88,12 @@
                     var result = x * y;<br/>
                     <br/>
                     //Ou bien:<br/>
-                    var result = 10 * 35;
+                    var result = 10 * 35;<br/>
+                    <br/>
+                    //Il est possible de simplifier avec la syntaxe:<br/>
+                    result *= 2; //Ceci équivaut à faire: result = result * 2;<br/>
+                    <br/>
+                    //Il ni a pas de result**; car il serait totalement inutile de multiplier par 1 une variable.
                 </pre>
 
                 <h3 id="divisions">4- Les divisions</h3>
@@ -86,10 +103,15 @@
                 <pre class="code">
                     var x = 16;<br/>
                     var y = 4;<br/>
-                    var result = x - y;<br/>
+                    var result = x / y;<br/>
                     <br/>
                     //Ou bien:<br/>
-                    var result = 16 / 4;
+                    var result = 16 / 4;<br/>
+                    <br/>
+                    //Il est possible de simplifier avec la syntaxe:<br/>
+                    result /= 2; //Ceci équivaut à faire: result = result / 2;<br/>
+                    <br/>
+                    //Il ni a pas de result//; car il serait totalement inutile de diviser par 1 une variable.
                 </pre>
 
                 <p><span class="alert">Attention:</span> Si vous faites une division par <span class="badge">0</span> il ne vous retournera pas un nombre valide mais une valeur de type <span class="badge">Infiniti</span>.</p>
@@ -104,7 +126,12 @@
                     var result = x % y; // Le résultat sera 0. Car 30/15=2 et donc il ne reste rien.<br/>
                     <br/>
                     //Ou bien:<br/>
-                    var result = 27%4; // Le result sera 3. Car 27/4 = 6 (6 * 4 = 24) et il reste 3 (27 - 24 = 3).
+                    var result = 27%4; // Le result sera 3. Car 27/4 = 6 (6 * 4 = 24) et il reste 3 (27 - 24 = 3).<br/>
+                    <br/>
+                    //Il est possible de simplifier avec la syntaxe:<br/>
+                    result %= 2; //Ceci équivaut à faire: result = result % 2;<br/>
+                    <br/>
+                    //Il ni a pas de result%%;
                 </pre>
 
                 <p><span class="badge">Conseil:</span> Le modulo est utile pour pas mal d'algorithme. Notamment pour savoir si un nombre est pair en utilisant le modulo de 2 "<span class="badge">x%2</span>", pour faire des systèmes de pagination, pour récupérer une image dans une sprite sheet etc...</p>
