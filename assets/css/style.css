@@ -1,25 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-:root{
-    --color-bg-1: #303030;
-    --color-bg-2: #444;
-    --color-bg-2-hover: #383838;
-    --color-bg-3: #888;
-    --color-bg-4: #bebebe;
-
-    --color-link: #00bc8c;
-    --color-text: white;
-    --color-alert: #e74c3c;
-    --color-warn: #f39c12;
-
-    --font-family-primary: 'Roboto', sans-serif;
-    --font-family-secondary: 'Raleway', monospace;
-}
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root{
+    --color-bg-primary: #272b30;
+    --color-bg-secondary: #3a3f44;
+    --color-bg-hover: #17191b;
+    --color-bg-code: #c5c5c5;
+
+    --color-primary: #aaa;
+    --color-alert: #ee5f5b;
+    --color-warn: #f89406;
+    --color-badge: #62c462;
 }
 
 html{
@@ -27,107 +23,117 @@ html{
 }
 
 body{
-    background-color: var(--color-bg-1);
-    color: white;
-
-    font-family: var(--font-family-primary);
-}
-
-a{
-    color: var(--color-link);
-    text-decoration: none;
+    background-color: var(--color-bg-primary);
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1{
-    font-size: 2rem;
+    margin: 2rem 0;
     text-align: center;
 }
 
 h2{
-    font-size: 1.5rem;
+    margin: 1.5rem 0;
 }
 
-h1, h2, h3{
-    padding: 1rem 0;
+h3, pre{
+    margin: 1rem 0;
 }
 
 p{
-    margin: .5rem 0;
-}
-
-header{
-    position: sticky;
-    display: flex;
-    flex-direction: row-reverse;
-    top: 0;
-}
-
-header p{
-    font-size: 3rem;
-    padding: 1rem;
-    margin: 0;
-}
-
-header nav{
-    background-color: var(--color-bg-1);
-    position: absolute;
-    top: 100%;
-    width: 0;
-    transition: .2s;
-    overflow-x: hidden;
-    white-space: nowrap;
-    text-align: right;
-}
-
-img{
-    max-width: 100%;
-}
-
-header nav.active{
-    width: 100%;
-}
-
-header ul{
-    overflow-y: auto;
-    max-height: calc(100vh - 5.5rem);
-}
-
-header li{
-    padding: 1rem;
-    border-bottom: 1px solid var(--color-bg-3);
-}
-
-header li:last-child{
-    border-bottom: 1px solid transparent;
-}
-
-.badge{
-    color: var(--color-link);
-}
-
-.container{
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem .7rem;
-}
-
-.btn, .buttons a{
-    display: block;
-    cursor: pointer;
-    padding: 1rem;
-    background-color: var(--color-bg-2);
-    color: var(--color-text);
-    border-radius: .2rem;
+    text-align: justify;
     margin: .7rem 0;
 }
 
-.btn:hover, .buttons a:hover{
-    background-color: var(--color-bg-2-hover);
+pre{
+    background-color: var(--color-bg-code);
+    padding: 1rem;
+    overflow-x: auto;
+    color: black;
 }
 
-.separator{
-    border-bottom: 1px solid var(--color-bg-3);
-    margin: 1rem 0;
+code{
+    font-family: 'Raleway', monospace;
+}
+
+footer{
+    background-color: var(--color-bg-secondary);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}
+
+/* Contenu du header */
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-bg-secondary);
+}
+
+header p{
+    color: white;
+    font-size: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+#menuBurger{
+    width: 3rem;
+    cursor: pointer;
+}
+
+#navbar{
+    width: 0;
+    background-color: var(--color-bg-secondary);
+    position: absolute;
+    padding: 0;
+    top: 100%;
+    right: 0;
+    height: calc(100vh - 100%);
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: .2s;
+}
+
+#navbar.active{
+    width: 100%;
+    padding: 1rem;
+}
+
+#navbar a{
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-bg-code);
+}
+
+@media (min-width: 768px) {
+    #navbar.active{
+        width: 350px;
+    }
+}
+
+/* Contenu de la page */
+
+#app{
+    padding: 1.5rem .7rem;
+    min-height: 90vh;
+}
+
+.badge{
+    color: var(--color-badge);
 }
 
 .alert{
@@ -136,89 +142,73 @@ header li:last-child{
 
 .warn{
     color: var(--color-warn);
-    padding: 1rem;
 }
 
-.example{
-    font-size: 1.2rem;
-    margin: 1rem 0;
-}
-
-pre.hljs{
-    display: block;
-    white-space: normal;
-    padding: 1rem;
-    margin: 1rem auto;
-    background-color: var(--color-bg-4);
-    font-family: var(--font-family-secondary);
-}
-
-.hljs-reserved{
-    color: #00f;
-}
-
-span.javascript, span.hljs-number{
-    color: #a31515;
+div.warn{
+    padding: 1rem 1.5rem;
 }
 
 .buttons{
     display: flex;
     justify-content: space-between;
+    padding: 1rem 2rem;
 }
 
-.buttons a{
-    text-align: center;
-    width: 49%;
+.buttons .button{
+    width: 50%;
+}
+
+.button{
+    padding: 0.5rem;
+}
+
+.button-item{
     white-space: nowrap;
-    overflow-x: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--color-bg-secondary);
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: .5s;
 }
 
-@media (min-width: 992px)
-{
-    body{
-        display: flex;
-        flex-direction: row-reverse;
-    }
+.button-item:hover{
+    background-color: var(--color-bg-hover);
+}
 
-    header{
-        width: 20%;
-        height: fit-content;
-        padding: 3rem;
-    }
+.img-auto{
+    width: auto;
+    max-width: 100%;
+    margin: 1rem 0;
+}
 
-    header p{
-        display: none;
-    }
-
-    header nav{
-        width: 100%;
-        position: static;
-        white-space: normal;
-    }
-
+@media (min-width: 992px) {
     main{
-        width: 90%;
+        width: 960px;
+        margin: auto;
     }
 }
 
-@media (min-width: 1200px)
-{
-    .container{
-        width: 992px;
+@media (min-width: 1200px) {
+    main{
+        width: 1140px;
     }
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--color-bg-1);
+    background-color: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar {
     height: 6px;
     width: 6px;
-    background-color: var(--color-bg-1);
+    background-color: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-bg-2);
+    background-color: var(--color-bg-secondary);
     border-radius: 3px;
 }
