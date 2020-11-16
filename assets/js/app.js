@@ -91,7 +91,6 @@ function loadElement(page, line) {
         page.app += ' ' + item;
     })
     page.app += '>';
-    console.log(tab[0]);
 }
 
 /** @param {PageGenerator} page
