@@ -74,8 +74,7 @@ function loadHn(page, line) {
 /** @param {PageGenerator} page
  * @param {string} line */
 function loadElement(page, line) {
-    console.log(line);
-    const tab = line.substring(1, line.length - 2).trim().split('#');
+    const tab = line.substring(1, line.length - 1).trim().split('#');
     if (tab.length === 0) { return }
     page.app += '<' + (tab[0].startsWith('un') ? ('/' + tab[0].substring(2, tab[0].length)) : tab[0])
     let id = '#';
