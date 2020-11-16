@@ -5,4 +5,5 @@
 >Créer des variables et les afficher|javascript/chapter-3
 >Les opérations et la concaténation|javascript/chapter-4
 >Les opérateurs et les conditions.|javascript/chapter-5
+>Les boucles while, do-while et for|javascript/chapter-6
 [unsection]

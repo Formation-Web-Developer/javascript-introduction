@@ -185,5 +185,5 @@ if(age >= 18){
 [unsection]
 [div#class="buttons"]
 >Les opérations et la concaténation|javascript/chapter-4
->Revenir au sommaire|javascript/chapters
+>Les boucles while, do-while et for|javascript/chapter-6
 [undiv]
