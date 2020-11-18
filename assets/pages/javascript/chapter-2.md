@@ -53,6 +53,6 @@ Pour cela il fallait ajouter l'attribut {span|badge}onmouseout{unspan} à notre 
 [img#class="img-auto"#src="https://picsum.photos/300/300"#ondblclick="alert('Double Click !')"#onmouseout="alert('la souris est sortie de l\'image')"]
 [unsection]
 [div#class="buttons"]
->Ajouter du code JavaScript dans sa page HTML|javascript/chapter-1
->Créer des variables et les afficher|javascript/chapter-3
+>{sm}← Chapitre 1{unspan}{md}Ajouter du code JavaScript dans sa page HTML{unspan}|javascript/chapter-1
+>{sm}Chapitre 3 →{unspan}{md}Créer des variables et les afficher{unspan}|javascript/chapter-3
 [undiv]

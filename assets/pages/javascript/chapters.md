@@ -6,4 +6,6 @@
 >Les opérations et la concaténation|javascript/chapter-4
 >Les opérateurs et les conditions.|javascript/chapter-5
 >Les boucles while, do-while et for|javascript/chapter-6
+>Les fonctions|javascript/chapter-7
+>Les objets|javascript/chapter-8
 [unsection]

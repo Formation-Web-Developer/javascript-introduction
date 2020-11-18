@@ -146,6 +146,6 @@ console.log(items[1]); // Afficher Chat dans la console.
 ```
 [unsection]
 [div#class="buttons"]
->Les actions sur les balises html|javascript/chapter-2
->Les opérations et la concaténation|javascript/chapter-4
+>{sm}← Chapitre 2{unspan}{md}Les actions sur les balises html{unspan}|javascript/chapter-2
+>{sm}Chapitre 4 →{unspan}{md}Les opérations et la concaténation{unspan}|javascript/chapter-4
 [undiv]

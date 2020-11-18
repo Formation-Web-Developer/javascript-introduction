@@ -184,6 +184,6 @@ if(age >= 18){
 ```
 [unsection]
 [div#class="buttons"]
->Les opérations et la concaténation|javascript/chapter-4
->Les boucles while, do-while et for|javascript/chapter-6
+>{sm}← Chapitre 4{unspan}{md}Les opérations et la concaténation{unspan}|javascript/chapter-4
+>{sm}Chapitre 6 →{unspan}{md}Les boucles while, do-while et for{unspan}|javascript/chapter-6
 [undiv]

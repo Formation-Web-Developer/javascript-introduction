@@ -24,13 +24,13 @@ while (i < 50){
   console.log(i);
 }
 ```
-Ici je déclare une variable i et je questionne au début de la boucle si i est bien strictement inférieur à 50. Comme c'est le cas, il entre dans la boucle et fait ce que je lui ai demandé de faire, c’est-à-dire:
+Ici je déclare une variable {span|badge}i{unspan} et je questionne au début de la boucle si {span|badge}i{unspan} est bien strictement inférieur à {span|alert}50{unspan}. Comme c'est le cas, il entre dans la boucle et fait ce que je lui ai demandé de faire, c’est-à-dire:
 [div#class="warn"]
 {span|badge}1{unspan} - j'ncrémente mon {span|badge}i{unspan} de {span|badge}1{unspan}.
 {span|badge}2{unspan} - J'affiche dans la console {span|badge}i{unspan}.
 [undiv]
-Puis comme je suis à la fin de la boucle, je remonte automatique à l'endroit de la {span|badge}condition{unspan}. Puis je requestionne. Est-ce qui (qui vaut maintenant {span|badge}1{unspan} et plus {span|alert}0{unspan}) est strictement inférieure à {span|badge}50{unspan} ? {span|warn}Oui !{unspan} Donc je continue le procédé jusqu'à ce qu'i vaille {span|badge}50{unspan}.
-À partir de {span|badge}50{unspan} ma condition ne sera plus {span|alert}vraie{unspan} et je sortirais donc de ma boucle et je passerais à la suite du code.
+Puis comme je suis à la fin de la boucle, je remonte automatiquement à l'endroit de la {span|badge}condition{unspan}. Puis je requestionne. Est-ce que {span|badge}i{unspan} (qui vaut maintenant {span|badge}1{unspan} et plus {span|alert}0{unspan}) est strictement inférieure à {span|badge}50{unspan} ? {span|warn}Oui !{unspan} Donc je continue le procédé jusqu'à ce qu'i vaille {span|badge}50{unspan}.
+À partir de {span|badge}50{unspan} ma condition ne sera plus {span|alert}vraie{unspan} et je sortirais donc de ma boucle pour passer à la suite du code.
 [unsection]
 
 [section#id="boucleDoWhile"#nav=La boucle do-while]
@@ -164,6 +164,6 @@ items.forEach(item => {
 [unsection]
 [unsection]
 [div#class="buttons"]
->Les opérateurs et les conditions|javascript/chapter-5
->Revenir au sommaire|javascript/chapters
+>{sm}← Chapitre 5{unspan}{md}Les opérateurs et les conditions{unspan}|javascript/chapter-5
+>{sm}Chapitre 7 →{unspan}{md}Les fonctions{unspan}|javascript/chapter-7
 [undiv]

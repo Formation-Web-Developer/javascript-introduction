@@ -100,7 +100,7 @@ function loadButton(page, line) {
     if (tab.length === 0 || tab[0].trim().length === 0) { return }
     page.app += '<div class="button"><div class="button-item"';
     if (tab.length > 1) { page.app += ' onclick="loadPage(\'' + tab[1].trim() + '\')"' }
-    page.app += '>' + tab[0].trim() + '</div></div>';
+    page.app += '>' + parseSpan(tab[0].trim()) + '</div></div>';
 }
 
 /** @param {PageGenerator} page
@@ -126,6 +126,8 @@ function parseSpan(line) {
         .replaceAll('{span|alert}', '<span class="alert">')
         .replaceAll('{span|badge}', '<span class="badge">')
         .replaceAll('{span|warn}', '<span class="warn">')
+        .replaceAll('{sm}', '<span class="small">')
+        .replaceAll('{md}', '<span class="medium">')
         .replaceAll('{unspan}', '</span>')
 }
 

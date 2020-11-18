@@ -42,6 +42,6 @@ Sinon et par principe elle sera plutôt placée en dernier dans la balise {span|
 {span|alert}Attention{unspan}: dans cet exemple j'ai indiqué le {span|badge}src{unspan} mais il n'est pas obligatoire suivant les cas de positionnement. Il est bien sûr possible d'ajouter directement le code dans les balises {span|badge}script{unspan}.
 [unsection]
 [div#class="buttons"]
->Revenir au sommaire|javascript/chapters
->Les actions sur les balises html|javascript/chapter-2
+>← Revenir au sommaire|javascript/chapters
+>{sm}Chapitre 2 →{unspan}{md}Les actions sur les balises html{unspan}|javascript/chapter-2
 [undiv]

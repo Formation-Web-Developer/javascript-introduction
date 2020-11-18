@@ -203,6 +203,6 @@ var result = 'John Doe à ' + ( 12 + 5 ) + ' pommes.'; // Resultat: John Doe à 
 ```
 [unsection]
 [div#class="buttons"]
->Créer des variables et les afficher|javascript/chapter-3
->Les opérateurs et les conditions.|javascript/chapter-5
+>{sm}← Chapitre 3{unspan}{md}Créer des variables et les afficher{unspan}|javascript/chapter-3
+>{sm}Chapitre 5 →{unspan}{md}Les opérateurs et les conditions{unspan}|javascript/chapter-5
 [undiv]
